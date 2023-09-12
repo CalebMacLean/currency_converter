@@ -16,7 +16,7 @@ toolbar = DebugToolbarExtension(app)
 
 
 # Application
-@app.route('/')
+@app.route('/', endpoint='home')
 def view_home():
     """Renders home page template"""
     return render_template("home.html")
@@ -61,14 +61,15 @@ def get_converted_answer():
         flash("Error in currency conversion API request.", category="error")
         return redirect('/')
     
-@app.route('currency-codes')
+@app.route('/currency-codes', endpoint='currency-codes')
 def view_curr_codes():
     """Page that list out valid currency codes to convert"""
 
     symbols_response = requests.get('https://api.exchangerate.host/symbols')
     symbols_data = symbols_response.json()
 
-    return render_template('codes.html', curr_code = symbols_data['symbols'])
+    return render_template('codes.html', curr_codes = symbols_data['symbols'],
+                           descriptions = [symbols_data['symbols'][code]['description'] for code in symbols_data['symbols']])
 
 
 

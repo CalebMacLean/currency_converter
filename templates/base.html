@@ -8,9 +8,9 @@
 </head>
 <body>
     <header>
-        <span class="logo center">CONVERT</span>
+        <a href="{{ url_for('home') }}" class="logo center">CONVERT</a>
         <nav class="center">
-            <a href="#" class="center">Currency Codes</a>
+            <a href="{{ url_for('currency-codes') }}" class="center">Currency Codes</a>
         </nav>
     </header>   
     <main>
@@ -18,7 +18,7 @@
             {% block content %}
             {% endblock %}
         </section>
-        <section id="message-wrapper">
+        <section id="message-wrapper" class="center">
             {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
                     <ul>

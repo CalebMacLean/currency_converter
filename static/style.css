@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: black;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Nav Bar */
+header {
+    width: 90vw;
+    height: 8vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: 0.5rem;
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+}
+
+.logo {
+    width: 15rem;
+    height: 3rem;
+    background-color: orange;
+    color: whitesmoke;
+    border: 0.3rem solid white;
+    border-radius: 2rem ;
+    font-size: 2rem;
+}
+
+nav {
+    width: 35rem;
+    height: 3rem;
+}
+
+nav a {
+    width: 13rem;
+    height: 2rem;
+    background-color: orange;
+    color: white;
+    margin: 0 0.3rem 0 0.3rem;
+    border: 0.1rem solid whitesmoke;
+    border-radius: 1rem;
+    justify-self: flex-end;
+}
+
+nav a:hover{
+    background-color: whitesmoke;
+    color: red;
+}
+
+nav a:active{
+    background-color: black;
+    color: white;
+}
+
+/* Main Styles */
+main {
+    width: 100vw;
+    height: 92vh;
+    padding: 2rem;
+}
+
+/* Form Styles */
+#conversion-form {
+    width: 80vw;
+    min-width: 20rem;
+    height: 15vh;
+    min-height: 10rem;
+    padding: 0.5rem;
+    display: grid;
+    grid-gap: 0.8rem;
+    justify-content: stretch;
+    align-items: stretch;
+    grid-template-columns: 
+    [first] 1fr
+    [second] 1fr
+    [third] 1fr;
+    grid-template-rows: 
+    [inputs] 1fr
+    [button] 1fr;
+    grid-auto-flow: row;
+    background-color: goldenrod;
+    border: 0.1rem solid blue;
+    border-radius: 0.3rem;
+}
+
+#conversion-form:first-child {
+    grid-column: first;
+    grid-row: inputs;
+}
+
+.input-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: gold;
+    border: 0.1rem solid yellow; 
+}
+
+.form-btn {
+    background-color: blue;
+}
+/* Flash Messages Styles */
+.error {
+    width: 75vw;
+    height: 5rem;
+    background-color: red;
+    color: white;
+    font-size: 2.5rem;
+}
+
+.message {
+    width: 75vw;
+    height: 5rem;
+    background-color: yellow;
+    color: black;
+    font-size: 2.5rem;
+}

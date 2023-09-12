@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<form action="/convert" id="conversion-form" class="center">
+    <div class="input-wrapper">
+        <label for="from-input">Converting From: </label>
+        <input type="text" name="from-input" id="from-input" class="conversion-input">
+    </div>
+    <div class="input-wrapper">
+        <label for="to-input">Converting To: </label>
+        <input type="text" name="to-input" id="to-input" class="conversion-input">
+    </div>
+    <div class="input-wrapper">
+        <label for="amount-input">Amount: </label>
+        <input type="text" name="amount-input" id="amount-input" class="conversion-input">
+    </div>
+    <button class="form-btn">Convert</button>
+</form>
+{% endblock %}
